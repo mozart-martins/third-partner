@@ -1,0 +1,41 @@
+{% load bootstrap4 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a href="{% url 'core:index_view' %}" class="navbar-brand">Third Partner</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="{% url 'core:index_view' %}" class="nav-link">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'core:index_view' %}" class="nav-link">Planilha</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'core:index_view' %}" class="nav-link">Notas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'core:index_view' %}" class="nav-link">Vagas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% bootstrap_javascript jquery='full' %}
+</body>
+</html>
