@@ -1,13 +1,17 @@
-{% load bootstrap4 %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Third Partner - Rodapé</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% load static %} {% load bootstrap4 %}
+
+    {% bootstrap_css %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'core/style.css' %}"
+    />
+
+    <div class="footerbox">
+      <p class="blockquote text-right">
+        O coração do homem traça o seu caminho, mas o Senhor lhe dirige os
+        passos.
+      </p>
+      <p class="blockquote-footer text-right">Rei Salomão, Provérbios 16:9</p>
+    </div>
+    {% bootstrap_javascript jquery='full' %}

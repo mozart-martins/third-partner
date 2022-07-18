@@ -1,17 +1,9 @@
 {% load bootstrap4 %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'core/style.css' %}">
-</head>
-<body>
+
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
             <a href="{% url 'core:index_view' %}" class="navbar-brand">Third Partner</a>
@@ -37,5 +29,3 @@
         </div>
     </nav>
     {% bootstrap_javascript jquery='full' %}
-</body>
-</html>
