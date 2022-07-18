@@ -12,17 +12,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item active" id="index_menu">
                         <a href="{% url 'core:index_view' %}" class="nav-link">Início</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{% url 'core:index_view' %}" class="nav-link">Planilha</a>
+                    <li class="nav-item" id="sheet_menu">
+                        <a href="{% url 'core:sheet_view' %}" class="nav-link">Planilha</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{% url 'core:index_view' %}" class="nav-link">Notas</a>
+                    <li class="nav-item" id="receipt_menu">
+                        <a href="{% url 'core:receipt_view' %}" class="nav-link">Notas</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{% url 'core:index_view' %}" class="nav-link">Vagas</a>
+                    <li class="nav-item" id="vacancies_menu">
+                        <a href="{% url 'core:vacancies_view' %}" class="nav-link">Vagas</a>
                     </li>
                 </ul>
             </div>
