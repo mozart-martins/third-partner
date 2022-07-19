@@ -9,7 +9,7 @@ class WorkedHours(models.Model):
     worked_hours = models.TimeField()
     description = models.CharField(max_length=200)
 
-    class Meta():
+    class Meta:
         verbose_name = "Hora"
         verbose_name_plural = "Horas"
 

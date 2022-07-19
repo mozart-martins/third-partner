@@ -5,7 +5,7 @@ class WisdomQuotation(models.Model):
     quote = models.CharField(max_length=300)
     author = models.CharField(max_length=80)
 
-    class Meta():
+    class Meta:
         verbose_name = "Citação"
         verbose_name_plural = "Citações"
 

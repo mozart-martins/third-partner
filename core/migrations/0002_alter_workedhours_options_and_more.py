@@ -6,17 +6,17 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0001_initial'),
+        ("core", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='workedhours',
+            name="workedhours",
             options={},
         ),
         migrations.RenameField(
-            model_name='workedhours',
-            old_name='worker',
-            new_name='worker_id',
+            model_name="workedhours",
+            old_name="worker",
+            new_name="worker_id",
         ),
     ]

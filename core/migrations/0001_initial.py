@@ -15,29 +15,51 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='WisdomQuotation',
+            name="WisdomQuotation",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('quote', models.CharField(max_length=300)),
-                ('author', models.CharField(max_length=80)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("quote", models.CharField(max_length=300)),
+                ("author", models.CharField(max_length=80)),
             ],
             options={
-                'verbose_name': 'Citação',
-                'verbose_name_plural': 'Citações',
+                "verbose_name": "Citação",
+                "verbose_name_plural": "Citações",
             },
         ),
         migrations.CreateModel(
-            name='WorkedHours',
+            name="WorkedHours",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date', models.DateField()),
-                ('worked_hours', models.TimeField()),
-                ('description', models.CharField(max_length=200)),
-                ('worker', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("date", models.DateField()),
+                ("worked_hours", models.TimeField()),
+                ("description", models.CharField(max_length=200)),
+                (
+                    "worker",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Hora',
-                'verbose_name_plural': 'Horas',
+                "verbose_name": "Hora",
+                "verbose_name_plural": "Horas",
             },
         ),
     ]
