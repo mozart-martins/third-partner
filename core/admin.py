@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+""" from .models import WisdomQuotation, WorkedHours
+
+admin.site.register(WorkedHours)
+admin.site.register(WisdomQuotation)
+ """

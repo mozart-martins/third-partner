@@ -1,13 +1,19 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.views.generic.list import ListView
 
-class SheetView(TemplateView):
+from .models import WorkedHours
+
+
+class SheetView(ListView):
+    model = WorkedHours
     template_name = 'core/planilha.html'
+    context_object_name = 'hours'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         context['info'] = 'sheet_menu'
         return context
+
 
 class ReceiptView(TemplateView):
     template_name = 'core/receipt.html'
@@ -16,6 +22,7 @@ class ReceiptView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['info'] = 'receipt_menu'
         return context
+
 
 class VacanciesView(TemplateView):
     template_name = 'core/vagas.html'
