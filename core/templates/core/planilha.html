@@ -2,5 +2,35 @@
 {% load static %} {% load bootstrap4 %}
 {% block content%}
 
+<p class="h1 text-center">Planilha de {{user}}</p>
+<div class="card-body">
+    <form method="POST" enctype="multipart/form-data" class="form-inline" action="{% url 'core:add_hours_view' %}">
+        <div class="form-group mx-auto mt-auto mb-auto">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" class="btn btn-primary ml-4" name="Add Hours" value="Adicionar Registro">
+        </div>
+    </form>
+</div>
+<div class="card-body ">
+    <table class="table table-dark ">
+        <thead>
+            <tr>
+                <th scope="col">Dia</th>
+                <th scope="col">Horas Trabalhadas</th>
+                <th scope="col">Descrição</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                {% for hour in hours %}
+                <th scope="row">{{hour.date}}</th>
+                <td>{{hour.worked_hours}}</td>
+                <td>{{hour.description}}</td>
+            </tr>
+            {% endfor %}
+        </thead>
+    </table>
+</div>
 
 {% endblock %}
