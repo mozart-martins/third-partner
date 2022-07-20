@@ -16,11 +16,17 @@ class AddWorkedHours(ModelForm):
         }
         widgets = {
             "worker": forms.TextInput(
-                attrs={"class": "form-control"}
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "1",
+                    "value": "1",
+                    "type": "hidden",
+                }
             ),
-            "date": forms.DateInput(attrs={"class": "form-control"}),
+            "date": forms.DateInput(attrs={"class": "form-control ml-2", "type": "date"}),
             "worked_hours": forms.TimeInput(
-                format="%H:%M", attrs={"class": "form-control", "type": "time"}
+                format="%H:%M",
+                attrs={"class": "form-control ml-2", "type": "time"},
             ),
-            "description": forms.TextInput(attrs={"class": "form-control"}),
+            "description": forms.TextInput(attrs={"class": "form-control ml-2"}),
         }
