@@ -1,10 +1,12 @@
+from core.models import WorkedHours
 from django import forms
-from models import WorkedHours
+from django.forms import ModelForm
 
 
-class AddWorkedHours(forms.ModelForm):
+class AddWorkedHours(ModelForm):
     class Meta:
         model = WorkedHours
+
         fields = ("worker", "date", "worked_hours", "description")
         labels = {
             "worker": "Trabalhador",
@@ -14,7 +16,7 @@ class AddWorkedHours(forms.ModelForm):
         }
         widgets = {
             "worker": forms.TextInput(
-                attrs={"class": "form-control", "type": "hidden"}
+                attrs={"class": "form-control"}
             ),
             "date": forms.DateInput(attrs={"class": "form-control"}),
             "worked_hours": forms.TimeInput(
