@@ -12,6 +12,7 @@ class SheetView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         context["info"] = "sheet_menu"
+        context["title"] = "Planilha"
         return context
 
 
@@ -21,6 +22,7 @@ class ReceiptView(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         context["info"] = "receipt_menu"
+        context["title"] = "Recibos"
         return context
 
 
@@ -30,4 +32,5 @@ class VacanciesView(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         context["info"] = "vacancies_menu"
+        context["title"] = "Vagas"
         return context

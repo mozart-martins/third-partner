@@ -1,28 +1,23 @@
 {% load static %} {% load bootstrap4 %}
 
-    {% bootstrap_css %}
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'core/style.css' %}"
-    />
+{% bootstrap_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'core/style.css' %}" />
 
-    <div class="footerbox">
-      <p class="blockquote text-right">
-        O coração do homem traça o seu caminho, mas o Senhor lhe dirige os
-        passos.
-      </p>
-      <p class="blockquote-footer text-right">Rei Salomão, Provérbios 16:9</p>
-    </div>
- <script>
-{% comment %}       alert(document.getElementById("vacancies_menu").classList.contains('active')) {% endcomment %} 
-      var infor = "{{info}}"
-      if (infor == "") {
-        document.getElementById("index_menu").classList.add('active')
-      } else {
-        console.log(infor)
-        document.getElementById(infor).classList.add('active')
-        document.getElementById("index_menu").classList.remove('active')
-      }
-    </script>
-    {% bootstrap_javascript jquery='full' %}
+<div class="footerbox">
+  <p class="blockquote text-right">
+    O coração do homem traça o seu caminho, mas o Senhor lhe dirige os
+    passos.
+  </p>
+  <p class="blockquote-footer text-right">Rei Salomão, Provérbios 16:9</p>
+</div>
+<script>
+  var infor = "{{info}}"
+  if (infor == "") {
+    document.getElementById("index_menu").classList.add('active')
+  } else {
+    console.log(infor)
+    document.getElementById(infor).classList.add('active')
+    document.getElementById("index_menu").classList.remove('active')
+  }
+</script>
+{% bootstrap_javascript jquery='full' %}
