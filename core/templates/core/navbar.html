@@ -1,31 +1,62 @@
 {% load bootstrap4 %}
 {% load static %}
 
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'core/style.css' %}">
+{% if user.is_authenticated %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+        <a href="{% url 'core:index_view' %}" class="navbar-brand">Third Partner</a>
+        <p class="navbar-brand mb-0">| Bem vindo, {{user}}!</p>
 
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="container">
-            <a href="{% url 'core:index_view' %}" class="navbar-brand">Third Partner</a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active" id="index_menu">
-                        <a href="{% url 'core:index_view' %}" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item" id="sheet_menu">
-                        <a href="{% url 'core:sheet_view' %}" class="nav-link">Planilha</a>
-                    </li>
-                    <li class="nav-item" id="receipt_menu">
-                        <a href="{% url 'core:receipt_view' %}" class="nav-link">Notas</a>
-                    </li>
-                    <li class="nav-item" id="vacancies_menu">
-                        <a href="{% url 'core:vacancies_view' %}" class="nav-link">Vagas</a>
-                    </li>
-                </ul>
-            </div>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active" id="index_menu">
+                    <a href="{% url 'core:index_view' %}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item" id="sheet_menu">
+                    <a href="{% url 'core:sheet_view' %}" class="nav-link">Planilha</a>
+                </li>
+                <li class="nav-item" id="receipt_menu">
+                    <a href="{% url 'core:receipt_view' %}" class="nav-link">Notas</a>
+                </li>
+                <li class="nav-item" id="vacancies_menu">
+                    <a href="{% url 'core:vacancies_view' %}" class="nav-link">Vagas</a>
+                </li>
+                <li class="nav-item" id="logout_click">
+                    <a href="{% url 'users:logout_view' %}" class="nav-link">Logout</a>
+                </li>
+            </ul>
         </div>
-    </nav>
-    {% bootstrap_javascript jquery='full' %}
+    </div>
+</nav>
+
+{% else %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+        <a href="{% url 'core:index_view' %}" class="navbar-brand">Third Partner</a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active" id="index_menu">
+                    <a href="{% url 'core:index_view' %}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item" id="register_menu">
+                    <a href="{% url 'users:register_view' %}" class="nav-link">Cadastro</a>
+                </li>
+                <li class="nav-item" id="login_menu">
+                    <a href="{% url 'users:login_view' %}" class="nav-link">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endif %}
+
+{% bootstrap_javascript jquery='full' %}

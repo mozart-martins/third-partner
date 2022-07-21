@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+{% load static %} {% load bootstrap4 %}
+{% block content%}
+
+<p class="h1">Login</p>
+<p class="h1">{{info}}</p>
+<form action="{% url 'users:login_view' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Enviar" class="btn btn-primary">
+</form>
+
+{% endblock %}

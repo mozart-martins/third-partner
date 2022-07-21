@@ -11,8 +11,20 @@
 <body>
     {% include 'core/navbar.html' %}
     {% block content%} {% endblock %}
-    {% include 'core/footer.html' %}
 
+
+    <script>
+
+        var infor = "{{info}}"
+        console.log("Iniciando a rotina: ", infor)
+        if (infor == "") {
+            document.getElementById("index_menu").classList.add('active')
+        } else {
+            console.log(infor)
+            document.getElementById(infor).classList.add('active')
+            document.getElementById("index_menu").classList.remove('active')
+        }
+    </script>
 </body>
 
 </html>
