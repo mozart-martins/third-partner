@@ -20,6 +20,10 @@
     border-left: #444 solid;
 }
 
+.navbar .nav-item.inactive {
+    border-left: aquamarine solid !important;
+}
+
 .navbar .nav-link {
     margin-bottom: 0rem !important;
 }

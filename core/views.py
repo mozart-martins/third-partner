@@ -7,6 +7,16 @@ from .forms import AddWorkedHours
 from .models import WorkedHours
 
 
+class HomeView(TemplateView):
+    template_name = "core/index.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["info"] = "index_menu"
+        context["title"] = "Home"
+        return context
+
+
 class SheetView(ListView):
     model = WorkedHours
     template_name = "core/planilha.html"
@@ -45,10 +55,10 @@ class AddHoursView(CreateView):
     model = WorkedHours
     template_name = "core/planilha.html"
     form_class = AddWorkedHours
-    success_url = reverse_lazy('core:sheet_view')
+    success_url = reverse_lazy("core:sheet_view")
 
     def get_initial(self, *args, **kwargs):
         initial = super(AddHoursView, self).get_initial(**kwargs)
-        initial['worker'] = self.request.user
+        initial["worker"] = self.request.user
         print(initial)
         return initial

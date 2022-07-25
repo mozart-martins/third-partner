@@ -1,10 +1,10 @@
-from django.contrib.auth.models import User
 from django.db import models
+from users.models import CoworkerModel
 
 
 # Create your models here.
 class WorkedHours(models.Model):
-    worker = models.ForeignKey(User, on_delete=models.CASCADE)
+    worker = models.ForeignKey(CoworkerModel, on_delete=models.CASCADE)
     date = models.DateField()
     worked_hours = models.TimeField()
     description = models.CharField(max_length=200)

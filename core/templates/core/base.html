@@ -16,13 +16,24 @@
     <script>
 
         var infor = "{{info}}"
+        var user = "{{user}}"
         console.log("Iniciando a rotina: ", infor)
-        if (infor == "") {
-            document.getElementById("index_menu").classList.add('active')
-        } else {
-            console.log(infor)
-            document.getElementById(infor).classList.add('active')
-            document.getElementById("index_menu").classList.remove('active')
+        var listMenu = []
+        if (user == "AnonymousUser") {
+            listMenu = ['index_menu', 'register_menu', 'login_menu']
+        } else listMenu = ['index_menu', 'sheet_menu', 'receipt_menu', 'vacancies_menu']
+
+        var whichMenu = listMenu.indexOf(infor)
+        console.log(listMenu)
+        for (let i = 0; i < listMenu.length; i++) {
+            console.log("For: ", i)
+            if (listMenu[i] == infor) {
+                console.log(`Igual: ${listMenu[i]}, valor do infor: ${infor}`)
+                document.getElementById(infor).className = "nav-item active"
+            } else {
+                console.log("To no else!")
+                document.getElementById(listMenu[i]).className = "nav-item inactive"
+            }
         }
     </script>
 </body>
