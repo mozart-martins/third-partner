@@ -1,10 +1,9 @@
-.footerbox {
-    background-color:#111;
+#footerbox {
+    background-color:#444;
     color: rgb(211,211,211) !important;
     height: auto;
-    width: 100vw;
-    padding-top: 20px;
-    position: absolute;
+    width: 100%;
+    position:fixed;
     bottom:0;
     right:0;
     left: 0;
@@ -20,10 +19,18 @@
     border-left: #444 solid;
 }
 
-.navbar .nav-item.inactive {
-    border-left: aquamarine solid !important;
-}
+/* .navbar .nav-item.inactive {
+    border-left: #111 !important;
+} */
 
 .navbar .nav-link {
     margin-bottom: 0rem !important;
+}
+
+html {
+    overflow-y: scroll;
+}
+body {
+    background: rgb(183, 252, 254);
+    background: linear-gradient(90deg, rgba(183, 252, 254, 1) 0%, rgba(110, 178, 217, 1) 60%, rgba(0, 212, 255, 1) 100%);
 }

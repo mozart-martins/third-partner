@@ -1,3 +1,4 @@
+{% load static %} {% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,7 +11,19 @@
 
 <body>
     {% include 'core/navbar.html' %}
+
     {% block content%} {% endblock %}
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/style.css' %}" />
+
+    <blockquote class="blockquote">
+        <p class="mb-0 text-right">
+            O coração do homem traça o seu caminho, mas o Senhor lhe dirige os
+            passos.
+        </p>
+        <footer class="blockquote-footer text-right">Rei Salomão, Provérbios 16:9</footer>
+    </blockquote>
 
 
     <script>
@@ -20,8 +33,8 @@
         console.log("Iniciando a rotina: ", infor)
         var listMenu = []
         if (user == "AnonymousUser") {
-            listMenu = ['index_menu', 'register_menu', 'login_menu']
-        } else listMenu = ['index_menu', 'sheet_menu', 'receipt_menu', 'vacancies_menu']
+            listMenu = ['index_menu', 'register_menu', 'login_menu',]
+        } else listMenu = ['index_menu', 'sheet_menu', 'receipt_menu', 'vacancies_menu',]
 
         var whichMenu = listMenu.indexOf(infor)
         console.log(listMenu)
@@ -32,7 +45,8 @@
                 document.getElementById(infor).className = "nav-item active"
             } else {
                 console.log("To no else!")
-                document.getElementById(listMenu[i]).className = "nav-item inactive"
+                console.log(`Igual: ${listMenu[i]}, valor do infor: ${infor}`)
+                document.getElementById(listMenu[i]).className = "nav-item"
             }
         }
     </script>

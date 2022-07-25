@@ -64,4 +64,4 @@ class CoworkerModel(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = "Colaboradores"
 
     def __str__(self) -> str:
-        return f"{self.name_coworker}, {self.phone_number}"
+        return f"{self.name_coworker}"

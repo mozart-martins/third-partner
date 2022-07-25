@@ -1,12 +1,17 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
 
 from users.forms import LoginForm, NewUserForm
 
+from .models.coworkermodel import CoworkerModel
+
 
 def login_user(request):
-    """if request.method == "POST":
+
+    if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
@@ -22,29 +27,20 @@ def login_user(request):
             return redirect('users:login_view')
     else:
         print("Estou no else debaixo")
-        pass
     context = {
         'form': LoginForm,
         'info': 'login_menu',
     }
-    print("Estou aqui antes do return")"""
-    return render(request, "users/login.html", {})
+    print("Estou aqui antes do return")
+    return render(request, "users/login.html", context)
 
 
 def logout_user(request):
     logout(request)
 
 
-def register_user(request):
-    # Se for post, ele pega os dados do formulário
-    if request.method == "POST":
-        print("Post METHOD")
-        form = NewUserForm(request.POST)
-        print("Form: ", form.is_valid())
-        if form.is_valid():
-            user = form.save()
-            print("User: ", form, user)
-            return redirect("/")
-    form = NewUserForm()
-    context = {"form": form, "info": "register_menu"}
-    return render(request, "registration/register.html", context)
+class RegisterUserView(CreateView):
+    model = CoworkerModel
+    form_class = NewUserForm
+    template_name = "users/register.html"
+    success_url = reverse_lazy('core:index_view')

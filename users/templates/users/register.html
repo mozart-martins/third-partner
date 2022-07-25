@@ -3,11 +3,12 @@
 {% block content%}
 
 <p class="h1">Cadastro</p>
-<div class="container ml-0">
+<div class="form-group">
     <form action="" method="POST">
-        {% csrf_token %}
-        {{form}}
-        <br>
+        <table>
+            {% csrf_token %}
+            {{ form.as_table }}
+        </table>
         <input type="submit" value="Enviar" class="btn btn-primary">
     </form>
 </div>

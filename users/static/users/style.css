@@ -1,0 +1,4 @@
+.bgPage {
+    background: rgb(11, 7, 84);
+    background: linear-gradient(90deg, rgba(11, 7, 84, 1) 0%, rgba(120, 148, 163, 1) 60%, rgba(0, 212, 255, 1) 100%);
+}
