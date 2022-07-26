@@ -39,9 +39,11 @@ class NewUserForm(UserCreationForm):
         widget=forms.TextInput(attrs={"class": "focus:outline-none"})
     )
     password1 = forms.CharField(
+        label="Senha",
         required=True, widget=forms.PasswordInput(attrs={"class": "focus:outline-none"})
     )
     password2 = forms.CharField(
+        label="Confirme Senha",
         required=True, widget=forms.PasswordInput(attrs={"class": "focus:outline-none"})
     )
 

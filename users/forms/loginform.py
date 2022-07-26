@@ -1,15 +1,16 @@
 from django import forms
-from django.contrib.auth.models import User
+from django.forms import ModelForm
+from users.models.coworkermodel import CoworkerModel
 
 
-class LoginForm(forms.ModelForm):
+class LoginForm(ModelForm):
     class Meta:
-        model = User
-        fields = ("username", "password")
-        labels = {"username": "Usuário", "password": "Senha"}
+        model = CoworkerModel
+        fields = ("user_name", "password")
+        labels = {"user_name": "Nome do Usuário", "password": "Senha"}
         widgets = {
-            "username": forms.TextInput(attrs={"class": "form-control"}),
+            "user_name": forms.TextInput(attrs={"class": "form-control", "id": "floatingInput", "placeholder": "Seu login"}),
             "password": forms.PasswordInput(
-                attrs={"type": "password mr-1", "class": "form-control"}
+                attrs={"type": "password", "class": "form-control"}
             ),
         }

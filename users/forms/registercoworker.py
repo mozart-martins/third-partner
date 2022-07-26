@@ -45,8 +45,8 @@ class AddWorkedHours(ModelForm):
             "specialty": forms.TextInput(attrs={"class": "form-control ml-2"}),
             "email": forms.EmailInput(attrs={"class": "form-control ml-2"}),
             "phone_number": forms.TextInput(attrs={"class": "form-control ml-2"}),
-            "whatsapp": forms.CheckboxInput(),
+            "whatsapp": forms.CheckboxInput(attrs={"class": "form-control ml-2"}),
             "address": forms.TextInput(attrs={"class": "form-control ml-2"}),
             "working_place": forms.TextInput(attrs={"class": "form-control ml-2"}),
-            "image": forms.
+            "image": forms.ImageField(attrs={"class": "form-control ml-2"})
         }

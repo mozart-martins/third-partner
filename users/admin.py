@@ -18,7 +18,7 @@ class UserAdminConfig(UserAdmin):
         (None, {'fields': ('email', 'user_name', 'name_coworker', 'cnpj')}),
         ('Permissions', {
             'fields': ('is_staff', 'is_active')}),
-        ('Personal', {'fields': ('about',)}),
+        ('Personal', {'fields': ('about', 'image')}),
 
     )
 
