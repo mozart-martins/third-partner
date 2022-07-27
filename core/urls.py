@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import path
 
-from .views import AddHoursView, HomeView, ReceiptView, SheetView, VacanciesView
+from .views import (AddHoursView, HomeView, ReceiptView, SheetView,
+                    VacanciesView)
 
 app_name = "core"
 
