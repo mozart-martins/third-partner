@@ -2,14 +2,46 @@
 {% load static %} {% load bootstrap4 %}
 {% block content%}
 
-<p class="h1">Cadastro</p>
-<div class="form-group">
-    <form action="" method="POST">
-        <table>
-            {% csrf_token %}
-            {{ form.as_table }}
-        </table>
-        <input type="submit" value="Enviar" class="btn btn-primary">
-    </form>
-</div>
+<section class="h-100 h-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card rounded-3">
+                    <img src="https://picsum.photos/540/200" class="w-100"
+                        style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Cadastro</h3>
+
+                        <form action="{% url 'users:register_view' %}" class="px-md-2" method="POST">
+                            {% csrf_token %}
+                            <div class="form-outline mb-4">
+                                {{form.user_name}}
+                                <label class="form-label ml-1" for="user-name">Nome do usuário</label>
+                                {{form.name_pj}}
+                                <label class="form-label ml-1" for="name-pj">Nome da PJ</label>
+                                {{form.name_coworker}}
+                                <label class="form-label ml-1" for="coworker-name">Nome do colaborador</label>
+                                {{form.cnpj}}
+                                <label class="form-label ml-1" for="cnpj">CNPJ</label>
+                                {{form.email}}
+                                <label class="form-label ml-1" for="coworker-email">E-mail</label>
+                                {{form.phone_number}}
+                                <label class="form-label ml-1" for="coworker-phone">Telefone</label>
+                                {{form.password1}}
+                                <label class="form-label ml-1" for="coworker-password">Senha</label>
+                                {{form.password2}}
+                                <label class="form-label ml-1" for="coworker-confirme">Confirme a senha</label>
+                            </div>
+
+                            <button action="{% url 'users:register_view' %}" type="submit"
+                                class="btn btn-success btn-lg mb-1">Cadastrar</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

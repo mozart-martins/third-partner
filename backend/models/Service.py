@@ -4,9 +4,10 @@ from users.models.coworkermodel import CoworkerModel
 
 class Service(models.Model):
     coworker = models.ForeignKey(CoworkerModel, on_delete=models.CASCADE)
-    service = models.CharField(max_length=80, required=True)
+    service = models.CharField(max_length=80, blank=False)
     description = models.CharField(max_length=500)
-    price = models.FloatField()
+    deadline = models.DateField()
+    payoff = models.FloatField()
 
     class Meta:
         verbose_name = "Serviço"

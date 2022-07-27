@@ -8,6 +8,7 @@ from users.forms import LoginForm, NewUserForm
 
 from .models.coworkermodel import CoworkerModel
 
+app_name = 'users'
 """ class LoginView(View):
     form_class = LoginForm
     template_name = 'registration/login.html'
