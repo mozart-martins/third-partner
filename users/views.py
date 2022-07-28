@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from django.views.generic import View
+from django.views.generic import TemplateView, View
 from django.views.generic.edit import CreateView
 
 from users.forms import LoginForm, NewUserForm
@@ -9,21 +9,10 @@ from users.forms import LoginForm, NewUserForm
 from .models.coworkermodel import CoworkerModel
 
 app_name = 'users'
-""" class LoginView(View):
-    form_class = LoginForm
-    template_name = 'registration/login.html'
 
-    def get(self, request):
-        print("No get")
 
-    def post(self, request):
-        print("No post")
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        print("Contexto")
-        context['form'] = LoginForm
-        return context """
+class StdIndexView(TemplateView):
+    template_name = 'users/index.html'
 
 
 def login_user(request):

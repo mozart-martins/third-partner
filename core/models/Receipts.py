@@ -1,7 +1,6 @@
 import uuid
 from datetime import date
-
-from backend.models.Service import Service
+from core.models.Service import Service
 from django.db import models
 from users.models.coworkermodel import CoworkerModel
 

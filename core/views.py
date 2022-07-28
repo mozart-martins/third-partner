@@ -1,4 +1,6 @@
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView  # , DeleteView, UpdateView
 from django.views.generic.list import ListView
@@ -7,6 +9,7 @@ from .forms import AddWorkedHours
 from .models import WorkedHours
 
 
+@method_decorator(login_required, name='dispatch')
 class HomeView(TemplateView):
     template_name = "core/index.html"
 
