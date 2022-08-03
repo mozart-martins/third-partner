@@ -3,9 +3,8 @@
 {% block content%}
 
 <div class="form-group">
-    <form action="{% url 'users:login_view' %}" method="POST">
+    <form action="{% url 'users:nouser_view' %}" method="POST">
         {% csrf_token %}
-        <!--         {{form.as_p}} -->
         <div class="container">
             <div class="row">
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -15,24 +14,14 @@
                             <form>
                                 <div class="form-floating mb-3">
                                     {{form.user_name}}
-                                    <!-- <input type="text" class="form-control" id="floatingInput" placeholder="Seu login"> -->
                                     <label class="ml-1" for="floatingInput">Login</label>
                                 </div>
                                 <div class="form-floating mb-3">
                                     {{form.password}}
-                                    <!-- <input type="password" class="form-control" id="floatingPassword"
-                                        placeholder="Password"> -->
                                     <label class="ml-1" for="floatingPassword">Password</label>
                                 </div>
-
-                                <!--                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-                                    <label class="form-check-label" for="rememberPasswordCheck">
-                                        Remember password
-                                    </label>
-                                </div> -->
                                 <div class="d-grid">
-                                    <button action="{% url 'users:login_view' %}" method="POST"
+                                    <button action="{% url 'users:nouser_view' %}" method="POST"
                                         class="btn btn-primary btn-login text-uppercase fw-bold"
                                         type="submit">Entrar</button>
                                 </div>

@@ -1,2 +1,2 @@
-from .loginform import LoginForm
+from .loginform import CLoginForm
 from .newuserform import NewUserForm

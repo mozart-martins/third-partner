@@ -7,7 +7,8 @@ from .views import (AddHoursView, HomeView, ReceiptView, SheetView,
 app_name = "core"
 
 urlpatterns = [
-    #path("frontoffice", HomeView.as_view(), name="index_view"),
+
+    path("", HomeView.as_view(), name="index_view"),
     path("planilha/", SheetView.as_view(), name="sheet_view"),
     path("notas/", ReceiptView.as_view(), name="receipt_view"),
     path("vagas/", VacanciesView.as_view(), name="vacancies_view"),
