@@ -4,7 +4,7 @@ Neste arquivo constarão todas as funcionalidades planejadas para o sistema, bem
 
 
 # Visão Geral
-O sistema objetive atender a demanda de empresas que contratam profissionais no formato de Pessoa Jurídica e fornecem os serviços dessa pessoa para outras empresas administrando o cadastro dos parceiros, a carga horária trabalhada, as vagas da administradora e o envio das notas fiscais. Seguem as funcionalidades pretendidas até o momento.
+O sistema objetiva atender a demanda de empresas que contratam profissionais no formato de Pessoa Jurídica e fornecem os serviços dessas pessoas para outras empresas, administrando o cadastro dos parceiros, a carga horária trabalhada, as vagas da administradora e o envio das notas fiscais. Seguem as funcionalidades pretendidas até o momento.
 
 ## Cadastrar Parceiros
 Módulo destinado ao cadastro dos parceiros constando nome, CNPJ, nome da empresa, telefone, endereço, empresa na qual esta alocado, "documento da empresa" e outras informações que serão demandadas.
